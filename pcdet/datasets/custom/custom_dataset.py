@@ -290,7 +290,8 @@ if __name__ == '__main__':
         create_custom_infos(
             dataset_cfg=dataset_cfg,
             # class_names=['CAR', 'PEDESTRIAN', 'MOTORCYCLE'],
-            class_names= ["Car", "Two_Wheeler", "Adult", "Kid", "SUV", "Van"],
+            # class_names= ["Car", "Two_Wheeler", "Adult", "Kid", "SUV", "Van"],
+            class_names=dataset_cfg.CLASS_NAMES,
             # data_path=ROOT_DIR / 'data' / 'custom',
             # save_path=ROOT_DIR / 'data' / 'custom',
             data_path=ROOT_DIR,

@@ -654,12 +654,21 @@ def get_official_eval_result(gt_annos, dt_annos, current_classes, PR_detail_dict
     #     5: 'Truck'
     # }
     class_to_name = {
-        0: 'Car',
-        1: 'Two_Wheeler',
-        2: 'Adult',
-        3: 'Kid',
+        0: 'Small_Car',
+        1: 'Light_Car',
+        2: 'Car',
+        3: 'Van',
         4: 'SUV',
-        5: 'Van'
+        5: 'Small_Truck',
+        6: 'Medium_Truck',
+        7: 'Large_Truck',
+        8: 'Mini_Bus',
+        9: 'Bus',
+        10: 'Special_Vehicle',
+        11: 'Two_Wheeler',
+        12: 'Kickboard',
+        13: 'Adult',
+        14: 'Kid'
     }
     name_to_class = {v: n for n, v in class_to_name.items()}
     if not isinstance(current_classes, (list, tuple)):
