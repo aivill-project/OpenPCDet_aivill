@@ -9,4 +9,4 @@ scikit-image
 tqdm
 torchvision
 SharedArray
-spconv-cu113==2.2.6
+# spconv-cu113==2.2.6

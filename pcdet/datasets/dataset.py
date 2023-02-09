@@ -51,10 +51,11 @@ class DatasetTemplate(torch_data.Dataset):
     def mode(self):
         if self.training:
             return 'train'
+        if self.set_val_test=='test':
+            return 'test'
         if self.training==False or self.set_val_test=='val':
             return 'val'
-        elif self.set_val_test=='test':
-            return 'test'
+        
 
 
     def __getstate__(self):
