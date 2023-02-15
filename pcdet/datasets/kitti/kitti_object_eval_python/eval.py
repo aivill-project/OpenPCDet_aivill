@@ -29,7 +29,7 @@ def get_thresholds(scores: np.ndarray, num_gt, num_sample_pts=41):
 
 def clean_data(gt_anno, dt_anno, current_class, difficulty):
     # CLASS_NAMES = ['car', 'pedestrian', 'cyclist', 'van', 'person_sitting', 'truck']
-    CLASS_NAMES = ['Car', 'SUV & Van', 'Truck', 'Bus', 'Special_Vehicle', 'Two_Wheeler', 'Person']
+    CLASS_NAMES = ['Car', 'SUV_&_Van', 'Truck', 'Bus', 'Special_Vehicle', 'Two_Wheeler', 'Person']
     # CLASS_NAMES = ['Small_Car', 'Light_Car', 'Car', 'Van', 'SUV', 'Small_Truck', 'Medium_Truck', 'Large_Truck', 
     #                'Mini_Bus', 'Bus', 'Special_Vehicle', 'Two_Wheeler', 'Kickboard', 'Adult', 'Kid']
     MIN_HEIGHT = [40, 25, 25]
@@ -654,10 +654,10 @@ def get_official_eval_result(gt_annos, dt_annos, current_classes, PR_detail_dict
     #                         [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.25, 0.25, 0.25, 0.25],
     #                         [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.25, 0.25, 0.25, 0.25]])
     # pvrcnn_integ
-    overlap_0_7 = np.array([[0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5], 
-                            [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5],
-                            [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5]])
-    overlap_0_5 = np.array([[0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5], 
+    overlap_0_7 = np.array([[0.1, 0.7, 0.1, 0.7, 0.7, 0.5, 0.5], 
+                            [0.1, 0.7, 0.1, 0.7, 0.7, 0.5, 0.5],
+                            [0.1, 0.7, 0.1, 0.7, 0.7, 0.5, 0.5]])
+    overlap_0_5 = np.array([[0.5, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5], 
                             [0.5, 0.5, 0.5, 0.5, 0.5, 0.25, 0.25],
                             [0.5, 0.5, 0.5, 0.5, 0.5, 0.25, 0.25]])
     min_overlaps = np.stack([overlap_0_7, overlap_0_5], axis=0)  # [2, 3, 5]
@@ -690,7 +690,7 @@ def get_official_eval_result(gt_annos, dt_annos, current_classes, PR_detail_dict
     # pvrcnn_integ
     class_to_name = {
         0: 'Car',
-        1: 'SUV & Van',
+        1: 'SUV_&_Van',
         2: 'Truck',
         3: 'Bus',
         4: 'Special_Vehicle',
