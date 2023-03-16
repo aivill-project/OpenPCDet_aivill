@@ -271,7 +271,7 @@ def create_custom_infos(dataset_cfg, class_names, data_path, save_path, workers=
 
     dataset.set_split(test_split)
     custom_infos_test = dataset.get_infos(
-        class_names, num_workers=workers, has_label=False, num_features=num_features
+        class_names, num_workers=workers, has_label=True, num_features=num_features
     )
     with open(test_filename, 'wb') as f:
         pickle.dump(custom_infos_test, f)
